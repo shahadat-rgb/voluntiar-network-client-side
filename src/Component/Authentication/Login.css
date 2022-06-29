@@ -1,0 +1,47 @@
+.main-section {
+  margin-top: 130px;
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  .signUp-design {
+    background-color: rgb(183, 179, 179);
+    width: 40%;
+    margin: 0 auto;
+    padding: 0px 40px 20px 40px;
+  }
+
+  .input-type {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .signUp-design {
+    background-color: #11283a;
+    width: 95%;
+    margin: 0 auto;
+    padding: 0px 10px 15px 10px;
+  }
+
+  .input-type {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+}
+
+.signin-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-left: 15px;
+}
+.signin-link:hover {
+  text-decoration: none;
+  color: blue;
+}

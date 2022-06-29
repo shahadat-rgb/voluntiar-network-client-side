@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import AddVoluntiar from "./Component/AddVoluntiar/AddVoluntiar";
+import Login from "./Component/Authentication/Login";
+import SignUp from "./Component/Authentication/SignUp";
+import Error from "./Component/Error/Error";
+import Events from "./Component/Eventes/Events";
+import Home from "./Component/FirstHomePage/Home/Home";
+import PrivateOutlet from "./Component/PrivateOutlet/PrivateOutlet";
+import RegisterForm from "./Component/Register/RegisterForm";
+import AuthProvider from "./Context/AuthProvider";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/voluntier" element={<AddVoluntiar />} />
+          <Route path="/login" element={<Login />} />
+          <Route  path='/signUp' element={<SignUp/>}/>
+          <Route path="*" element={<Error />} />
+          <Route  path ='/*' element={<PrivateOutlet/>} >
+                <Route path="events" element={<Events />} />
+                <Route path="events/:id" element={<RegisterForm />} />
+        </Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
