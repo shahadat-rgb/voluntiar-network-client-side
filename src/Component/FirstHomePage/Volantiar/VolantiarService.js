@@ -21,7 +21,7 @@ const VolantiarService = () => {
       {events.map((event) => {
         return (
           <div key={event._id} className="cursor-pointer">
-            <Link to={`/events/${event._id}`}>
+            <Link to={`dashboard/register/${event._id}`}>
               <img className="w-full" src={event.img} alt="" srcset="" />
               <div>
                 <p className="bg-yellow-400 p-3 font-normal">{event.name}</p>

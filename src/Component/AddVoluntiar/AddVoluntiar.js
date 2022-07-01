@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react';
-import Navbar from '../FirstHomePage/Navbar/Navbar';
+import React, { useRef} from 'react';
+import Sidebar from '../../Dashboards/Sidebar/Sidebar';
+import DashbordBar from '../DashbordBar/DashbordBar';
 
 const AddVoluntiar = () => {
     const nameRef = useRef()
@@ -27,15 +28,20 @@ const AddVoluntiar = () => {
       e.preventDefault()
     }
     return (
-        <div>
-            <Navbar/>
-        <div className='lg:w-96 m-auto bg-gray-200 pb-5'>
+      <div className="row w-full">
+        <div className="col-lg-3">
+           <Sidebar/>
+        </div>
+        <div className="col-lg-9">
+           <DashbordBar/>
+        <div className='lg:w-2/5 w-11/12 m-auto p-3 bg-gray-200'>
           <form onSubmit={handleSubmit} >
-            <input className='p-2 rounded w-80 mt-5 ml-8'  type="text" name="name" placeholder='name' ref={nameRef} id="" /><br /> <br />
-            <input className='p-2 rounded w-80 mt-5 ml-8' type='text' name='image' placeholder='enter img url' ref={imgRef} alt="" /> <br /> <br />
-            <input className='ml-32 bg-black text-white py-2 px-4'  type="submit" value="Add Voluntiar" />
+            <input className='p-2 rounded w-full'  type="text" name="name" placeholder='name' ref={nameRef} id="" /><br /> <br />
+            <input className='p-2 rounded w-full ' type='text' name='image' placeholder='enter img url' ref={imgRef} alt="" /> <br /> <br />
+            <input className='w-full rounded-md p-2 bg-blue-700 text-white'  type="submit" value="Add Voluntiar" />
           </form>
           </div>
+        </div>
         </div>
     );
 };

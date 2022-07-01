@@ -28,7 +28,7 @@ const RegisterForm = () => {
      .then(data => {
              if (data.insertedId) {
                 alert("register information has been save in database")
-                navigate("/events")
+                navigate("/dashboard/allevent-list")
              }
      })
  }
