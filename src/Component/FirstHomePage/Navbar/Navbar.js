@@ -37,7 +37,19 @@ const Navbar = () => {
             <ul className="lg:flex text-base pt-4 lg:py-2">
               <li className=" pt-2"><NavLink className="mr-5 hover:text-blue-900 font-medium text-lg " to='/' >Home</NavLink></li>
               <li className=" pt-2"> <NavLink className="mr-5 hover:text-blue-900 font-medium text-lg" to='/voluntier'>Add Voluntiar</NavLink></li>
-              <li className=" pt-2"><NavLink className="mr-5 hover:text-blue-900 font-medium text-lg" to='/donation'>Donation</NavLink></li>
+              <li className=" pt-2"> <NavLink className="mr-5 hover:text-blue-900 font-medium text-lg" to='/add-admin'>Add admin</NavLink></li>
+
+              {
+                user.email ? <li className=" pt-2"><NavLink className="mr-5 hover:text-blue-900 font-medium text-lg" to='/dashboard'>Dashboard</NavLink></li> 
+                :
+                <NavLink to='/login'>
+                <button className="inline-flex items-center bg-black text-white  py-3 px-7 focus:outline-none hover:bg-blue-700 hover:text-white rounded text-base">Login
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                       <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+               </button>
+                 </NavLink> 
+              }
               <li className=" pt-2"><NavLink className="mr-5 hover:text-blue-900 font-medium text-lg" to='/events'>eventes</NavLink></li>
                <li>
                {

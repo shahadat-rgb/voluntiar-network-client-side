@@ -6,6 +6,7 @@ firbaseInitialize()
 
 const useFirebase = () =>{
     const [user,setUser] = useState({})
+    const [admin,setAdmin] = useState(false)
     const [isLoading, setIsLoading] = useState(true);
 
 
@@ -15,8 +16,17 @@ const useFirebase = () =>{
     const handleGoogleSignIn = () =>{ 
         return  signInWithPopup(auth,googleProvider)      
     }
-
-
+   
+    //  secure dashboard panel for user and admin
+     
+    useEffect(()=>{
+        fetch(`http://localhost:4000/users/${user.email}`)
+        .then(res => res.json())
+        .then(data =>{
+              setAdmin(data.admin)
+        })
+    },[user.email])
+     
      /* logout apply will be use in  navbar componenet.
     justi create logout method in here.that' it */
 
@@ -40,6 +50,8 @@ const useFirebase = () =>{
 
     return {
         user,
+        admin,
+        setUser,
         logOut,
         handleGoogleSignIn,
         auth,

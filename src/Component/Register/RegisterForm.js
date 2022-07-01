@@ -49,7 +49,7 @@ const RegisterForm = () => {
         <input type='text' defaultValue={img} className="w-full p-2 rounded-md" {...register("img",{required:true})}/> <br /> <br />
         <input type='date' defaultValue={date} className="w-full p-2 rounded-md" {...register("date",{required:true})}/> <br /> <br />
         {/* <input type="number" {... register("age", { min: 18, max: 99 })} /> <br /> <br /> */}
-        <input className="w-full rounded-md p-2 bg-blue-700 text-white" type="submit" />
+        <input className="w-full rounded-md p-2 bg-blue-700 text-white" type="submit" value='Register'/>
       </form>
     </div>
   );
