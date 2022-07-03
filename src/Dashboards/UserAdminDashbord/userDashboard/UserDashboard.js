@@ -34,7 +34,7 @@ const UserDashboard = () => {
                   setEvents(reamingProduct)
              }
          })
-        }
+        }       
      }
 
     return (
@@ -46,14 +46,26 @@ const UserDashboard = () => {
               <div className="grid lg:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-3">
               {
                 events.map(evnt => {
-                    const {organicName,img,date} = evnt
-                    return <div key={evnt._id} className='lg:w-4/5 lg:mx-20 mx-6 bg-gray-100'>
-                                <img  src={img} className='lg:w-1/2 w-2/5 p-2 float-left mr-8' alt="" />
-                                <p className='lg:text-xl lg:mt-7 text-base font-medium mb-2'>{organicName}</p>
-                                <p>{date}</p>
-                                <button onClick={()=>handleDelete(evnt._id)} className='bg-red-500 py-1 px-2 rounded-sm text-white lg:mt-10'>cancel</button>
-                              
-            
+                    const {organicName,img,date,status} = evnt
+                    return <div key={evnt._id} className='bg-gray-100 rounded-xl lg:mx-1 mx-2'>
+                                <img  src={img} className='lg:w-2/5 w-44 h-32 p-3 float-left' alt="" />
+                                <p className='lg:text-xl lg:mt-7 mt-4 text-base font-medium mb-2'>{organicName}</p>
+                                <p className='text-blue-700 font-semibold float-left mt-1'>{date}</p>
+                                <div className="text-right">
+                                    {
+                                        status === 'pending' ?
+                                        <button className='bg-gray-200 text-red-500 px-4 py-2 rounded-md mr-2 font-semibold'>{status}</button>
+                                        :
+                                        status ==='Done' ?
+                                        <button className='bg-gray-200 text-green-500 px-4 py-2 rounded-md mr-2 font-semibold'>{status}</button>
+                                        :
+                                        <button className='bg-gray-200 text-blue-500 px-4 py-2 rounded-md mr-2 font-semibold'>{status}</button>
+
+                                    } 
+
+                                
+                                </div>
+                                <button onClick={()=>handleDelete(evnt._id)} className='bg-red-400 px-3 py-1 rounded-sm text-white'>cancel</button>                              
                           </div> 
                 })
             }

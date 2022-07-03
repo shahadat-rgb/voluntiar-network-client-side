@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 import reload from "../../../images/reload.gif";
 import "./VolantiarService.css";
 
 const VolantiarService = () => {
   const [events, setEvents] = useState([]);
-
+  const {admin} = useAuth()
   useEffect(() => {
     fetch("http://localhost:4000/add-voluntiar")
       .then((res) => res.json())
@@ -20,13 +21,23 @@ const VolantiarService = () => {
 
       {events.map((event) => {
         return (
-          <div key={event._id} className="cursor-pointer">
-            <Link to={`dashboard/register/${event._id}`}>
+          <div key={event._id} className='mb-5'>
+           {
+              admin ?
+              <div>
               <img className="w-full" src={event.img} alt="" srcset="" />
               <div>
                 <p className="bg-yellow-400 p-3 font-normal">{event.name}</p>
               </div>
-            </Link>
+            </div>
+            :
+            <Link to={`dashboard/register/${event._id}`} className='cursor-pointer'>
+            <img className="w-full" src={event.img} alt="" srcset="" />
+            <div>
+              <p className='bg-yellow-400 p-3 font-normal'>{event.name}</p>
+            </div>
+          </Link>
+           }
           </div>
         );
       })}

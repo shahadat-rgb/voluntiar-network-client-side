@@ -22,7 +22,7 @@ const RegisterForm = () => {
       headers:{
         'content-type':"application/json"
       },
-      body:JSON.stringify(data)
+      body:JSON.stringify({...data, status:"pending"})
      })
      .then(res => res.json())
      .then(data => {

@@ -8,7 +8,7 @@ import UserDashboard from './userDashboard/UserDashboard';
 const UserAdminDashboard = () => {
  const {admin} =   useAuth()
     return (
-        <div className='row w-full'>
+        <div className='row lg:w-full'>
             <div className="col-lg-3">
                   <Sidebar/>
             </div>

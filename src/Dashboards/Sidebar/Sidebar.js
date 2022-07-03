@@ -10,13 +10,13 @@ import PersonAddOutlined from '@mui/icons-material/PersonAddOutlined'
 import ExitToApp from '@mui/icons-material/ExitToApp'
 const Sidebar = () => {
     const {logOut,admin} = useAuth()
-    const userService=['Allevent list', 'Review']
+    const userService=['Allevent list', 'Profile']
     const adminService=['Allevent list', 'Add Event', 'Make Admin']
     return (
         <div className='w-full bg-gray-200 lg:h-100 h-15 lg:p-0 pb-3'>
             <div className='pt-4 pb-5'>
                 <Link to='/'>
-                    <img style={{height:'50px'}} src={logo} alt=""/>
+                    <img className='w-44' src={logo} alt=""/>
                 </Link>
                  
               </div>

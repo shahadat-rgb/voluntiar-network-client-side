@@ -11,8 +11,10 @@ import RegisterForm from "./Component/Register/RegisterForm";
 import AuthProvider from "./Context/AuthProvider";
 import UserAdminDashboard from "./Dashboards/UserAdminDashbord/UserAdminDashboard";
 import Review from "./Dashboards/UserAdminDashbord/userDashboard/Review/Review";
+// import useAuth from "./hooks/useAuth";
 
 function App() {
+  // const {admin} = useAuth 
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -21,12 +23,12 @@ function App() {
           <Route path="/dashboard/add-event" element={<AddVoluntiar />} />
           <Route  path="/dashboard/make-admin" element={<MakeAdmin/>}/>
           <Route path="/dashboard/allevent-list" element={<UserAdminDashboard/>} />
-          <Route path="/dashboard/review" element={<Review/>} />
+          <Route path="/dashboard/profile" element={<Review/>} />
           <Route path="/login" element={<Login />} />
           <Route  path='/signUp' element={<SignUp/>}/>
           <Route path="*" element={<Error />} />
           <Route  path ='/*' element={<PrivateOutlet/>} >
-                <Route path="dashboard/register/:id" element={<RegisterForm />} />
+                 <Route path="dashboard/register/:id" element={<RegisterForm />} />           
         </Route>
         </Routes>
       </BrowserRouter>

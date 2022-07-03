@@ -27,8 +27,8 @@ const AddVoluntiar = () => {
       })
       e.preventDefault()
     }
-    return (
-      <div className="row w-full">
+    return ( 
+      <div className="row lg:w-full">
         <div className="col-lg-3">
            <Sidebar/>
         </div>
@@ -36,6 +36,7 @@ const AddVoluntiar = () => {
            <DashbordBar/>
         <div className='lg:w-2/5 w-11/12 m-auto p-3 bg-gray-200'>
           <form onSubmit={handleSubmit} >
+             <p className='text-2xl text-center mb-3 font-semibold'>Add Event</p>
             <input className='p-2 rounded w-full'  type="text" name="name" placeholder='name' ref={nameRef} id="" /><br /> <br />
             <input className='p-2 rounded w-full ' type='text' name='image' placeholder='enter img url' ref={imgRef} alt="" /> <br /> <br />
             <input className='w-full rounded-md p-2 bg-blue-700 text-white'  type="submit" value="Add Voluntiar" />
