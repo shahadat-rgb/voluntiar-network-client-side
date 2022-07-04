@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import reload from '../../../images/reload.gif'
-import useAuth from '../../../hooks/useAuth';
+import { useEffect, useState } from 'react';
 import DashbordBar from '../../../Component/DashbordBar/DashbordBar';
+import useAuth from '../../../hooks/useAuth';
+import reload from '../../../images/reload.gif';
 const UserDashboard = () => {
     const {user} = useAuth()
     const [events,setEvents]=useState([])
 
     useEffect(()=>{
-         fetch('http://localhost:4000/show-events-by-mail',{
+         fetch('https://dry-scrubland-89748.herokuapp.com/show-events-by-mail',{
              method:'GET',
              headers:{  
                  'Content-Type':'application/json',
@@ -23,7 +23,7 @@ const UserDashboard = () => {
      const handleDelete = id =>{
         const procced =  window.confirm("Are you sure you want to delete this product")
         if (procced) {
-         fetch(`http://localhost:4000/events/${id}`,{
+         fetch(`https://dry-scrubland-89748.herokuapp.com/events/${id}`,{
              method:"delete"
          })
          .then(res => res.json())

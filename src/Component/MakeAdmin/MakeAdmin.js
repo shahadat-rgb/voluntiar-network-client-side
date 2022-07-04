@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Sidebar from '../../Dashboards/Sidebar/Sidebar';
 import DashbordBar from '../DashbordBar/DashbordBar';
 
@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e =>{
         const user =  {email}
-        fetch('http://localhost:4000/users/admin',{
+        fetch('https://dry-scrubland-89748.herokuapp.com/users/admin',{
             method:"put",
             headers:{
                 'content-type':"application/json"

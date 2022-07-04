@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import reload from "../../../images/reload.gif";
@@ -8,7 +8,7 @@ const VolantiarService = () => {
   const [events, setEvents] = useState([]);
   const {admin} = useAuth()
   useEffect(() => {
-    fetch("http://localhost:4000/add-voluntiar")
+    fetch("https://dry-scrubland-89748.herokuapp.com/add-voluntiar")
       .then((res) => res.json())
       .then((data) => setEvents(data));
   }, []);

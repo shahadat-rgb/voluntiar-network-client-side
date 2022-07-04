@@ -1,4 +1,4 @@
-import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut,} from "firebase/auth";
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import firbaseInitialize from "../firebase/firbase.init";
 
@@ -20,7 +20,7 @@ const useFirebase = () =>{
     //  secure dashboard panel for user and admin
      
     useEffect(()=>{
-        fetch(`http://localhost:4000/users/${user.email}`)
+        fetch(`https://dry-scrubland-89748.herokuapp.com/users/${user.email}`)
         .then(res => res.json())
         .then(data =>{
               setAdmin(data.admin)

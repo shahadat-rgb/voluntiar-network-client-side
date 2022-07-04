@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import logo from '../../images/Group 1329.png'
+import logo from '../../images/Group 1329.png';
 
 const RegisterForm = () => {
   const {user} = useAuth()
@@ -17,7 +17,7 @@ const RegisterForm = () => {
 
 
  const onSubmit = data =>{
-     fetch("http://localhost:4000/events",{
+     fetch("https://dry-scrubland-89748.herokuapp.com/events",{
       method:'post',
       headers:{
         'content-type':"application/json"
@@ -34,7 +34,7 @@ const RegisterForm = () => {
  }
 
   useEffect(() => {
-    fetch(`http://localhost:4000/events/${id}`)
+    fetch(`https://dry-scrubland-89748.herokuapp.com/events/${id}`)
       .then((res) => res.json())
       .then((data) => setRegisters(data));
   }, [id]);

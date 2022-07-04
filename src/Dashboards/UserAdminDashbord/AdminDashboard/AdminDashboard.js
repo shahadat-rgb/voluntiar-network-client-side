@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import DeleteForever from '@mui/icons-material/DeleteForever';
+import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -6,10 +7,9 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import {Form} from 'react-bootstrap'
-import  DeleteForever from '@mui/icons-material/DeleteForever'
-import reload from '../../../images/reload.gif'
+import { useEffect, useState } from 'react';
+import { Form } from 'react-bootstrap';
+import reload from '../../../images/reload.gif';
 const AdminDashboard = () => {
     const [allEvent,setAllEvent] = useState([])
 
@@ -26,7 +26,7 @@ const AdminDashboard = () => {
       setAllEvent(modifiedEvents)
       const modifiedStatus = {id,status}
 
-      fetch('http://localhost:4000/update-status',{
+      fetch('https://dry-scrubland-89748.herokuapp.com/update-status',{
           method:'put',
           headers:{
             'content-type':'application/json'
@@ -44,7 +44,7 @@ const AdminDashboard = () => {
 
 //  show all order/events of user 
     useEffect(()=>{
-        fetch('http://localhost:4000/all-events-show')
+        fetch('https://dry-scrubland-89748.herokuapp.com/all-events-show')
         .then(res=> res.json())
         .then(data => setAllEvent(data))
     },[])
@@ -54,7 +54,7 @@ const AdminDashboard = () => {
     const deleteAdminEvent = id =>{
       const procced =  window.confirm("Are you sure you want to delete this product")
       if (procced) {
-       fetch(`http://localhost:4000/allEvents/${id}`,{
+       fetch(`https://dry-scrubland-89748.herokuapp.com/allEvents/${id}`,{
            method:"delete"
        })
        .then(res => res.json())
