@@ -47,19 +47,19 @@ const UserDashboard = () => {
               {
                 events.map(evnt => {
                     const {organicName,img,date,status} = evnt
-                    return <div key={evnt._id} className='bg-gray-100 rounded-xl lg:mx-1 mx-2'>
+                    return <div key={evnt._id} className='bg-gray-100 rounded-xl lg:mx-1 mx-2 mb-3'>
                                 <img  src={img} className='lg:w-2/5 w-44 h-32 p-3 float-left' alt="" />
                                 <p className='lg:text-xl lg:mt-7 mt-4 text-base font-medium mb-2'>{organicName}</p>
                                 <p className='text-blue-700 font-semibold float-left mt-1'>{date}</p>
-                                <div className="text-right">
+                                <div className="lg:text-right  ">
                                     {
                                         status === 'pending' ?
-                                        <button className='bg-gray-200 text-red-500 px-4 py-2 rounded-md mr-2 font-semibold'>{status}</button>
+                                        <button className='bg-gray-200 text-red-500 lg:px-4 lg:py-2 px-3 py-1 mb-2 rounded-md mr-2 font-semibold'>{status}</button>
                                         :
                                         status ==='Done' ?
-                                        <button className='bg-gray-200 text-green-500 px-4 py-2 rounded-md mr-2 font-semibold'>{status}</button>
+                                        <button className='bg-gray-200 text-green-500 lg:px-4 lg:py-2 px-3 py-1 mb-2 rounded-md mr-2 font-semibold'>{status}</button>
                                         :
-                                        <button className='bg-gray-200 text-blue-500 px-4 py-2 rounded-md mr-2 font-semibold'>{status}</button>
+                                        <button className='bg-gray-200 text-blue-500 lg:px-4 lg:py-2 px-3 py-1 mb-2 rounded-md mr-2 font-semibold'>{status}</button>
 
                                     } 
 

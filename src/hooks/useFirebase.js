@@ -8,7 +8,7 @@ const useFirebase = () =>{
     const [user,setUser] = useState({})
     const [admin,setAdmin] = useState(false)
     const [isLoading, setIsLoading] = useState(true);
-
+    const [events, setEvents] = useState([]);
 
     const auth = getAuth()
     // google signin section
@@ -16,7 +16,12 @@ const useFirebase = () =>{
     const handleGoogleSignIn = () =>{ 
         return  signInWithPopup(auth,googleProvider)      
     }
-   
+    //  events of home page
+    useEffect(() => {
+        fetch("https://dry-scrubland-89748.herokuapp.com/add-voluntiar")
+          .then((res) => res.json())
+          .then((data) => setEvents(data));
+      }, []);
     //  secure dashboard panel for user and admin
      
     useEffect(()=>{
@@ -51,6 +56,7 @@ const useFirebase = () =>{
     return {
         user,
         admin,
+        events,
         setUser,
         logOut,
         handleGoogleSignIn,
