@@ -1,8 +1,7 @@
-import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import "./Navbar.css";
-import logo  from "../../../images/Group 1329.png"
 import useAuth from "../../../hooks/useAuth";
+import logo from "../../../images/Group 1329.png";
+import "./Navbar.css";
 const Navbar = () => {
   const {user} = useAuth( )
   return (
@@ -39,7 +38,7 @@ const Navbar = () => {
               <li className=" pt-2"> <NavLink className="mr-5 hover:text-blue-900 font-medium text-lg" to='/donation'>Donation</NavLink></li>
               <li className=" pt-2"> <NavLink className="mr-5 hover:text-blue-900 font-medium text-lg" to='/blog'>Blog</NavLink></li>
               <li className=" pt-2"> <NavLink className="mr-5 hover:text-blue-900 font-medium text-lg" to='/contack'>conack</NavLink></li>
-              <li className=" pt-2"> <NavLink className="mr-5 hover:text-blue-900 font-medium text-lg" to='/review'>Review</NavLink></li>
+              <li className=" pt-2"> <NavLink className="mr-5 hover:text-blue-900 font-medium text-lg" to='/Review'>Review</NavLink></li>
                {
                 user.email ? <li className=""><NavLink className="mr-5 font-medium text-lg" to='/dashboard/allevent-list'> <button className="inline-flex items-center bg-blue-700 text-white  py-3 px-3 focus:outline-none hover:bg-blue-700  rounded text-base">Dashbord
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
@@ -56,7 +55,7 @@ const Navbar = () => {
                </button>
                  </NavLink>
                </li>
-            }              
+              }              
               <li>
                
             </li>

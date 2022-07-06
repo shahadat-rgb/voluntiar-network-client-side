@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AddVoluntiar from "./Component/AddVoluntiar/AddVoluntiar";
 import Login from "./Component/Authentication/Login";
@@ -10,7 +10,8 @@ import PrivateOutlet from "./Component/PrivateOutlet/PrivateOutlet";
 import RegisterForm from "./Component/Register/RegisterForm";
 import AuthProvider from "./Context/AuthProvider";
 import UserAdminDashboard from "./Dashboards/UserAdminDashbord/UserAdminDashboard";
-import Review from "./Dashboards/UserAdminDashbord/userDashboard/Review/Review";
+import Profile from "./Dashboards/UserAdminDashbord/userDashboard/Profile/Profile";
+
 // import useAuth from "./hooks/useAuth";
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
           <Route path="/dashboard/add-event" element={<AddVoluntiar />} />
           <Route  path="/dashboard/make-admin" element={<MakeAdmin/>}/>
           <Route path="/dashboard/allevent-list" element={<UserAdminDashboard/>} />
-          <Route path="/dashboard/profile" element={<Review/>} />
+          <Route path="/dashboard/profile" element={<Profile/>} />
           <Route path="/login" element={<Login />} />
           <Route  path='/signUp' element={<SignUp/>}/>
           <Route path="*" element={<Error />} />
