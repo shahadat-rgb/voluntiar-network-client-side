@@ -8,7 +8,7 @@ import "./VolantiarService.css";
 const VolantiarService = () => {
   const {admin,events} = useAuth()
    const [searchItem,setSearchItem]   = useState('')
-   console.log("search item",searchItem);
+
   return (
     <div>   
        <div className='vulantiar-banner sm:w-full'>
@@ -19,7 +19,7 @@ const VolantiarService = () => {
        
       </div>
         </div>
-    <div className="grid  lg:grid-cols-4 sm:grid-cols-2  grid-cols-1  mt-6 mx-5 lg:mx-32 gap-6">
+    <div className="grid  lg:grid-cols-4 sm:grid-cols-2  grid-cols-1  mt-6 mx-5 lg:mx-32 gap-6 lg:-mt-44">
       {events.length < 1 && (
         <img className="w-44" src={reload} alt="" srcset="" />
       )}
@@ -36,7 +36,7 @@ const VolantiarService = () => {
         }
      ).map((event) => {
         return (
-          <div key={event._id} className='mb-5 lg:-mt-44'>
+          <div key={event._id} className='mb-5'>
            {
               admin ?
               <div>
