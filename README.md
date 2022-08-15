@@ -28,6 +28,23 @@
 * Html 
 
 ### Project Screenshot:
-### Home page :
 
+### Home page :
+![vulantiar](https://user-images.githubusercontent.com/67516342/184588191-dc398eef-6a39-4112-bb8c-0c4be8bf1eeb.png)
+
+### Event Page :
+![event](https://user-images.githubusercontent.com/67516342/184588337-ac969287-7a5a-4cc8-9f0c-73afc6739ec1.png)
+
+### Dashbord Page
+![dashboard](https://user-images.githubusercontent.com/67516342/184588347-7c50ad03-7ad2-4948-b003-b591dec2f09d.png)
+
+### Add Admin 
+![make-admin](https://user-images.githubusercontent.com/67516342/184588369-726c3116-0fa3-4b31-90d2-e4f984a5bb5a.png)
+
+### create event
+![add-event](https://user-images.githubusercontent.com/67516342/18
+
+### Profile  :
+![profile](https://user-images.githubusercontent.com/67516342/184588372-397c935f-5ec8-4366-894f-c32e80b1530f.png)
+4588365-5b0c0810-4d17-417d-b128-2e5333c67483.png)
 
