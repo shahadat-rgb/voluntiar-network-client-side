@@ -42,7 +42,7 @@
 ![make-admin](https://user-images.githubusercontent.com/67516342/184588369-726c3116-0fa3-4b31-90d2-e4f984a5bb5a.png)
 
 ### create event
-![add-event](https://user-images.githubusercontent.com/67516342/18
+![add-event](https://user-images.githubusercontent.com/67516342/184588365-5b0c0810-4d17-417d-b128-2e5333c67483.png)
 
 ### Profile  :
 ![profile](https://user-images.githubusercontent.com/67516342/184588372-397c935f-5ec8-4366-894f-c32e80b1530f.png)
